@@ -1,0 +1,1464 @@
+{
+	"info": {
+		"_postman_id": "f9ac2d89-7c5b-41b0-8f84-dd4cf117a635",
+		"name": "Project_movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Manger",
+					"item": [
+						{
+							"name": "List User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser?groupCode=gp01",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser"
+									],
+									"query": [
+										{
+											"key": "groupCode",
+											"value": "gp01"
+										},
+										{
+											"key": "userName",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List User Paging",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/paging?groupCode=gp01&userName=&page=0&size=5",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"paging"
+									],
+									"query": [
+										{
+											"key": "groupCode",
+											"value": "gp01"
+										},
+										{
+											"key": "userName",
+											"value": ""
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/search?userName=&groupCode=gp01",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"search"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": ""
+										},
+										{
+											"key": "groupCode",
+											"value": "gp01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search User Paging",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/searchpaging?groupCode=gp01&userName=1&page=0&size=5",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"searchpaging"
+									],
+									"query": [
+										{
+											"key": "groupCode",
+											"value": "gp01"
+										},
+										{
+											"key": "userName",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/role",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/delete?userName=trungtin1",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "userName",
+											"value": "trungtin1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\":\"vip1\",\r\n    \"password\":\"Q123@qweQ!\",\r\n    \"email\":\"tin122d322ssưs2sf3411113@gmail.com\",\r\n    \"phoneNumber\":\"123324\",\r\n    \"fullName\":\"trung tin\",\r\n    \"roleCode\":\"admin\",\r\n    \"groupCode\":\"gp01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/create",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{movie_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\":\"vip7\",\r\n    \"password\":\"Q123@qweQ!\",\r\n    \"email\":\"tin12d32ssưs2sf3411113@gmail.com\",\r\n    \"phoneNumber\":\"1222223324\",\r\n    \"fullName\":\"trung tin\",\r\n    \"roleCode\":\"admin\",\r\n    \"groupCode\":\"gp01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain-api}}/api/manageuser/update",
+									"host": [
+										"{{domain-api}}"
+									],
+									"path": [
+										"api",
+										"manageuser",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"vip1\",\r\n    \"password\":\"Q123@qweQ!\",\r\n    \"email\":\"tin123sssss23242dd3w@gmail.com\",\r\n    \"phoneNumber\":\"123324\",\r\n    \"fullName\":\"trung tin\",\r\n    \"roleCode\":\"admin\",\r\n    \"groupCode\":\"gp01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/user/register",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"vip2\",\r\n    \"password\":\"Q1232@qweQ!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/user/login",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"vip1\",\r\n    \"password\":\"Q1232@qweQ!\",\r\n    \"email\":\"77777777@gmail.com\",\r\n    \"phoneNumber\":\"123324\",\r\n    \"fullName\":\"trung tin\",\r\n    \"roleCode\":\"admin\",\r\n    \"groupCode\":\"gp01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/user/update",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/user/infoUser?userName=vip1",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"infoUser"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "vip1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Showtime",
+			"item": [
+				{
+					"name": "List Showtime",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/manageshowtime/",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"manageshowtime",
+								""
+							],
+							"query": [
+								{
+									"key": "showtimeCode",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Showtime By Cineplex",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/manageshowtime/getshowtimebycineplex?cinplexCode=&group",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"manageshowtime",
+								"getshowtimebycineplex"
+							],
+							"query": [
+								{
+									"key": "cinplexCode",
+									"value": ""
+								},
+								{
+									"key": "group",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Showtime By Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/manageshowtime/getshowtimebyFilm?movieCode=",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"manageshowtime",
+								"getshowtimebyFilm"
+							],
+							"query": [
+								{
+									"key": "movieCode",
+									"value": ""
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create showtime",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"startTime\": \"12/10/2021 03:31\",\r\n        \"theaterCode\": 1,\r\n        \"movieCode\": \"5031\",\r\n        \"price\": 75000\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/manageshowtime/create",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"manageshowtime",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookTicket",
+			"item": [
+				{
+					"name": "Create Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showtimeCode\": 95,\r\n    \"totalPrice\": 111111,\r\n    \"paymentMethod\": \"cash\",\r\n    \"seatList\": [\"79\"]\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/bookticket/create",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"bookticket",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "List Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain-api}}/api/managegroup/",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managegroup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain-api}}/api/managegroup/?groupCode=gp01",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managegroup",
+								""
+							],
+							"query": [
+								{
+									"key": "groupCode",
+									"value": "gp01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupCode\": \"gp02\",\r\n    \"groupName\": \"group 02\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/managegroup/create",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managegroup",
+								"create"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cineplex",
+			"item": [
+				{
+					"name": "List Cinplex",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain-api}}/api/managecineplex/?cineplexCode=&groupCode",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managecineplex",
+								""
+							],
+							"query": [
+								{
+									"key": "cineplexCode",
+									"value": ""
+								},
+								{
+									"key": "groupCode",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Cinema",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain-api}}/api/managecinema/?cineplexCode=bhdstar",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managecinema",
+								""
+							],
+							"query": [
+								{
+									"key": "cineplexCode",
+									"value": "bhdstar"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "List Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/?groupCode=gp01",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								""
+							],
+							"query": [
+								{
+									"key": "groupCode",
+									"value": "gp01"
+								},
+								{
+									"key": "movieName",
+									"value": "123124",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Movie Paging",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/paging/?groupCode=gp01&movieName=&page=3&size=2",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								"paging",
+								""
+							],
+							"query": [
+								{
+									"key": "groupCode",
+									"value": "gp01"
+								},
+								{
+									"key": "movieName",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Movie Paging Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/date/?groupCode=gp01&movieName&page=0&size=20&fromDate=12/09/2021&toDate=15/09/2021",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								"date",
+								""
+							],
+							"query": [
+								{
+									"key": "groupCode",
+									"value": "gp01"
+								},
+								{
+									"key": "movieName",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "fromDate",
+									"value": "12/09/2021"
+								},
+								{
+									"key": "toDate",
+									"value": "15/09/2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movieCode",
+									"value": "12322212",
+									"type": "text"
+								},
+								{
+									"key": "movieName",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "movieAlias",
+									"value": "123asd",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "http://123123123",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HOTBOY/Desktop/1.png"
+								},
+								{
+									"key": "description",
+									"value": "aaasdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "groupCode",
+									"value": "gp01",
+									"type": "text"
+								},
+								{
+									"key": "openingDay",
+									"value": "12/09/2021",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/create",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movieCode",
+									"value": "123222",
+									"type": "text"
+								},
+								{
+									"key": "movieName",
+									"value": "abcc",
+									"type": "text"
+								},
+								{
+									"key": "movieAlias",
+									"value": "123asd",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "http://123123123",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HOTBOY/Desktop/1.png"
+								},
+								{
+									"key": "description",
+									"value": "aaasdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "groupCode",
+									"value": "gp01",
+									"type": "text"
+								},
+								{
+									"key": "openingDay",
+									"value": "12/09/2021",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/update",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movieCode",
+									"value": "1232",
+									"type": "text"
+								},
+								{
+									"key": "movieName",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "movieAlias",
+									"value": "123asd",
+									"type": "text"
+								},
+								{
+									"key": "trailer",
+									"value": "http://123123123",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HOTBOY/Desktop/1.png"
+								},
+								{
+									"key": "description",
+									"value": "aaasdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "groupCode",
+									"value": "gp01",
+									"type": "text"
+								},
+								{
+									"key": "openingDay",
+									"value": "12/09/2021",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-api}}/api/managemovie/delete?movieCode=123124",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managemovie",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "movieCode",
+									"value": "123124"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "List Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{movie_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-api}}/api/managepayment/",
+							"host": [
+								"{{domain-api}}"
+							],
+							"path": [
+								"api",
+								"managepayment",
+								""
+							],
+							"query": [
+								{
+									"key": "movieName",
+									"value": "123124",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain-api",
+			"value": "http://localhost:8082"
+		},
+		{
+			"key": "movie_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InZpcDIiLCJlbWFpbCI6Ijc3Nzc3Nzc3QGdtYWlsLmNvbSIsInJvbGVDb2RlIjoiYWRtaW4iLCJpYXQiOjE2MzI2MzI1NzQsImV4cCI6MTYzMjcxODk3NH0.6XJ9Q-EwU02SV_NqpQkzbu5DThNkInXYjburf7ThUwc"
+		}
+	]
+}

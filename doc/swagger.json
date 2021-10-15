@@ -1,0 +1,1095 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Swagger Movies",
+    "description": "Please use account: `admin`, password: `123@qweQ!` to login and get token. Please config environment in the file `.env` before migrate or seed db.",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "tin.quachtrung@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:{port}/api",
+      "variables": {
+        "port": {
+          "enum": [
+            "6969",
+            "8082"
+          ],
+          "default": "8082"
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Book Ticket"
+    },
+    {
+      "name": "Mangement Group"
+    },
+    {
+      "name": "Mangement Payment"
+    },
+    {
+      "name": "Mangement User"
+    },
+    {
+      "name": "Mangement Cineplex"
+    },
+    {
+      "name": "Mangement Cinema"
+    },
+    {
+      "name": "Mangement Movie"
+    },
+    {
+      "name": "Mangement Showtime"
+    }
+  ],
+  "paths": {
+    "/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        }
+      }
+    },
+    "/user/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Register",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Register",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        }
+      }
+    },
+    "/user/update": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update Infomation User",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/user/infoUser": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Register",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managegroup": {
+      "get": {
+        "tags": [
+          "Mangement Group"
+        ],
+        "summary": "Get list group",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managepayment": {
+      "get": {
+        "tags": [
+          "Mangement Payment"
+        ],
+        "summary": "Get list payment method",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser": {
+      "get": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list User",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "The group Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/role": {
+      "get": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list role",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/paging": {
+      "get": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list User Page",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "The group Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of list user",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of list user",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/search": {
+      "get": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list User by searching",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "The group Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/searchpaging": {
+      "get": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list User by Seaching page",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "The group Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of list user",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of list user",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/delete": {
+      "delete": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Get list User by Seaching page",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "description": "The user Name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/create": {
+      "post": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Create User (role is admin)",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Register",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageuser/update": {
+      "put": {
+        "tags": [
+          "Mangement User"
+        ],
+        "summary": "Update User (role is admin)",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Register",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageshowtime": {
+      "get": {
+        "tags": [
+          "Mangement Showtime"
+        ],
+        "summary": "Get information showtime",
+        "parameters": [
+          {
+            "name": "showtimeCode",
+            "in": "query",
+            "description": "Showtime Code",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageshowtime/getshowtimebycineplex": {
+      "get": {
+        "tags": [
+          "Mangement Showtime"
+        ],
+        "summary": "Get information showtime by cineplex",
+        "parameters": [
+          {
+            "name": "cinplexCode",
+            "in": "query",
+            "description": "Cineplex Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "group Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageshowtime/getshowtimebyFilm": {
+      "get": {
+        "tags": [
+          "Mangement Showtime"
+        ],
+        "summary": "Get information showtime by film",
+        "parameters": [
+          {
+            "name": "movieCode",
+            "in": "query",
+            "description": "Movie Code",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/manageshowtime/create": {
+      "post": {
+        "tags": [
+          "Mangement Showtime"
+        ],
+        "summary": "Create Showtime",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Create Showtime",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Showtime"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/bookticket/create": {
+      "post": {
+        "tags": [
+          "Book Ticket"
+        ],
+        "summary": "Book Ticket",
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "requestBody": {
+          "description": "Book Ticket",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ticket"
+              }
+            }
+          },
+          "required": true,
+          "x-codegen-request-body-name": "body"
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie": {
+      "get": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "Get list Movie",
+        "parameters": [
+          {
+            "name": "movieName",
+            "in": "query",
+            "description": "Movie Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "group Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie/paging": {
+      "get": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "Get list Movie",
+        "parameters": [
+          {
+            "name": "movieName",
+            "in": "query",
+            "description": "Movie Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "group Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of list user",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of list user",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie/date": {
+      "get": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "Get list Movie",
+        "parameters": [
+          {
+            "name": "movieName",
+            "in": "query",
+            "description": "Movie Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "group Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page of list user",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of list user",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "description": "The date begin",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "description": "The date end",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie/delete": {
+      "delete": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "Delete Movie",
+        "parameters": [
+          {
+            "name": "movieCode",
+            "in": "query",
+            "description": "The Movie Code",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie/create": {
+      "post": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "Delete Movie",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managemovie/update": {
+      "post": {
+        "tags": [
+          "Mangement Movie"
+        ],
+        "summary": "update Movie",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Movie"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managecineplex": {
+      "get": {
+        "tags": [
+          "Mangement Cineplex"
+        ],
+        "summary": "Get list Cineplex",
+        "parameters": [
+          {
+            "name": "cineplexCode",
+            "in": "query",
+            "description": "Cineplex Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "Group Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/managecinema": {
+      "get": {
+        "tags": [
+          "Mangement Cinema"
+        ],
+        "summary": "Get list Cinema",
+        "parameters": [
+          {
+            "name": "cineplexCode",
+            "in": "query",
+            "description": "Cineplex Code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Group": {
+        "type": "object",
+        "properties": {
+          "groupCode": {
+            "type": "string"
+          },
+          "groupName": {
+            "type": "string"
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "roleCode": {
+            "type": "string"
+          },
+          "roleName": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "number"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "roleCode": {
+            "type": "string"
+          },
+          "groupCode": {
+            "type": "string"
+          }
+        }
+      },
+      "Showtime": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "format": "date"
+          },
+          "theaterCode": {
+            "type": "string"
+          },
+          "movieCode": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "showtimeCode": {
+            "type": "number",
+            "format": "number"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentMethod": {
+            "type": "string"
+          },
+          "seatList": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "Movie": {
+        "type": "object",
+        "properties": {
+          "movieCode": {
+            "type": "number"
+          },
+          "movieName": {
+            "type": "string"
+          },
+          "movieAlias": {
+            "type": "string"
+          },
+          "trailer": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "groupCode": {
+            "type": "string"
+          },
+          "openingDay": {
+            "type": "string",
+            "format": "date"
+          },
+          "duration": {
+            "type": "number"
+          },
+          "rate": {
+            "type": "number"
+          },
+          "imageUrl": {
+            "type": "string",
+            "format": "base64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
