@@ -1,0 +1,8 @@
+NODE_ENV = "development"
+DB_PORT = 8082
+DB_USERNAME =  "root"
+DB_PASSWORD = ""
+DB_DATABASE = ""
+DB_HOST =  "localhost"
+DB_DIALECT =  "mysql"
+JWT_SECRET = "nodejs_17"
