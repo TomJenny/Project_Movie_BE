@@ -8,8 +8,11 @@ const { manageMovieRouters } = require("./manage_movie.routers");
 const { manageShowtimeRouters } = require("./manage_showtime.routers");
 const { bookTicketRouters } = require("./bookticket.routers");
 const { managePaymentRouters } = require("./manage_payment.routers");
+const { paypalRouters } = require("./paypal.routers");
 
 const rootRouter = express.Router();
+
+rootRouter.use("/paypal", paypalRouters);
 
 rootRouter.use("/user", userRouters);
 rootRouter.use("/bookticket", bookTicketRouters);
